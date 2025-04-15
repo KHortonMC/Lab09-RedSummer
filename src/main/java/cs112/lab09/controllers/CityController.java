@@ -12,35 +12,4 @@ import javafx.stage.Stage;
 
 public class CityController {
 
-    @FXML
-    protected void onClosePopup(ActionEvent event) {
-        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    Label locationLabel;
-
-    @FXML
-    Label descriptionLabel;
-
-    @FXML
-    Label dateLabel;
-
-    @FXML
-    Label revisedDescriptionLabel;
-
-    @FXML
-    ImageView imageView;
-
-    @FXML
-    public void initData(Constants.Event eventIndex) {
-        RevisedHistoricalEvent revisedEvent = new RevisedHistoricalEvent(Constants.HISTORICAL_DATA[eventIndex.ordinal()]);
-        locationLabel.setText(revisedEvent.getLocation());
-        descriptionLabel.setText(revisedEvent.getDescription());
-        dateLabel.setText(revisedEvent.getEventDay().toString());
-        revisedDescriptionLabel.setText(revisedEvent.getRevisedDescription());
-        imageView.setImage(revisedEvent.getImage());
-        //citation.setText(revisedEvent.getCitation());
-    }
 }
